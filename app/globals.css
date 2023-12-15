@@ -17,11 +17,138 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: var(--Page-background, #E8EAEE);
+  user-select: none;
+}
+
+.loader{
+  width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: conic-gradient(#0000 10%,#474bff);
+   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+   animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+
+.container{
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  background: #FFF;
+  width: 1136px;
+}
+
+.inner-bar{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+input{
+  display: flex;
+  padding: 24px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Input-field-background, #F2F4F8);
+  color: #000;
+  width: 100%;
+
+  /* Regular text */
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 130% */
+}
+
+.custom-button{
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--Black, #000);
+  color: #FFF;
+
+  /* Regular text */
+  font-family: Apercu Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 130% */
+}
+
+
+.gif{
+  width: 310px;
+  height: 236px;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.gif-name{
+  color: var(--Black, #000);
+  
+  /* Title */
+  font-family: Apercu Pro;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 125% */
+}
+
+.gif-username{
+  color: var(--Secondary-gray, #999FAA);
+  
+  /* Details 16/20 */
+  font-family: Apercu Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.pagination{
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageNumber{
+  color: var(--not-black, #272727);
+  cursor: pointer;
+  user-select: none;
+
+  /* Numbers */
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
+}
+
+button.active {
+  background: url("../public/Highlight.svg");
+  color: #333;
+  border-bottom: 2px solid #EB518F;
+  width: 32px;
+  height: 45px;
+  flex-shrink: 0;
 }
